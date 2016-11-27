@@ -93,7 +93,6 @@ public class ManagementVocabularyView extends JFrame
 		contentPane.add(panel, BorderLayout.EAST);
 		scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
-		gl_panel = new GroupLayout(panel);
 		
 		//wyswietlenie tabeli z haslami		
 		if(tableOfWords==null)
@@ -111,21 +110,22 @@ public class ManagementVocabularyView extends JFrame
 		buttonRemovingAllOfWords = new JButton("Usu\u0144 wszystkie s\u0142\u00F3wka z bazy");
 
 		//umieszczenie wszystkich elementow w grouplayout
+		gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(buttonBackToLearning, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-						.addComponent(buttonAddWord, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-						.addComponent(buttonDeleteSelected, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+						.addComponent(buttonAddWord, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+						.addComponent(buttonDeleteSelected, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
 						.addComponent(buttonRemovingAllOfWords))
 					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(24)
+					.addGap(39)
 					.addComponent(buttonAddWord)
 					.addGap(36)
 					.addComponent(buttonDeleteSelected)
@@ -133,10 +133,11 @@ public class ManagementVocabularyView extends JFrame
 					.addComponent(buttonRemovingAllOfWords)
 					.addGap(28)
 					.addComponent(buttonBackToLearning)
-					.addContainerGap(45, Short.MAX_VALUE))
+					.addContainerGap(40, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 }
 

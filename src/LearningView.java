@@ -94,7 +94,7 @@ public class LearningView extends JFrame
 		setVisible(true);
 		setTitle("Fiszki");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
-		setBounds(100, 100, 581, 383);
+		setBounds(100, 100, 534, 315);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -103,21 +103,21 @@ public class LearningView extends JFrame
 		//inicjalizacja paneli
 		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.NORTH);
-		gl_panel = new GroupLayout(panel);
 		panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
 		panel.setLayout(gl_panel);
-		gl_panel_1 = new GroupLayout(panel_1);
 		
 		//inicjalizacja labeli
 		labelTranslatingYourWord = new JLabel("Przet³umacz odpowiednie s³ówko!");
 		labelYourWordToTranslate = new JLabel("Twoje s³ówko do przet³umaczenia to:");	
 		labelYourWordToTranslating = new JLabel("New label");
+		labelYourWordToTranslating.setHorizontalAlignment(SwingConstants.CENTER);
 		labelCorrectAnswer = new JLabel("");
 		labelCorrectAnswer.setHorizontalAlignment(SwingConstants.CENTER);
 		labelYourAnswer = new JLabel("");
 		labelYourAnswer.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNumberWordsInDatabase = new JLabel("");
+		labelNumberWordsInDatabase.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		//inicjalizacja buttonow
 		buttonNextWord = new JButton("Kolejne has³o");
@@ -129,6 +129,71 @@ public class LearningView extends JFrame
 		textFieldWritingWord = new JTextField();
 		textFieldWritingWord.setColumns(10);
 		
+		gl_panel = new GroupLayout(panel);
+		gl_panel_1 = new GroupLayout(panel_1);
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(158)
+					.addComponent(labelYourWordToTranslate)
+					.addContainerGap(182, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, gl_panel_1.createSequentialGroup()
+					.addGap(187)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(labelNumberWordsInDatabase, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(buttonFinishLearning, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
+					.addContainerGap(186, Short.MAX_VALUE))
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+						.addGroup(Alignment.LEADING, gl_panel_1.createSequentialGroup()
+							.addGap(69)
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+										.addComponent(labelYourWordToTranslating, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addGap(60)
+											.addComponent(labelYourAnswer, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)))
+									.addGap(8))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(textFieldWritingWord, GroupLayout.PREFERRED_SIZE, 163, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(labelCorrectAnswer, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(52)
+							.addComponent(buttonCheckAnswer)
+							.addGap(18)
+							.addComponent(buttonDisplayingAnswer)
+							.addGap(38)
+							.addComponent(buttonNextWord, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)))
+					.addGap(52))
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(31)
+					.addComponent(labelYourWordToTranslate)
+					.addGap(18)
+					.addComponent(labelYourWordToTranslating)
+					.addGap(18)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(textFieldWritingWord, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(3)
+							.addComponent(labelCorrectAnswer)))
+					.addGap(18)
+					.addComponent(labelYourAnswer)
+					.addGap(15)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+						.addComponent(buttonCheckAnswer)
+						.addComponent(buttonDisplayingAnswer)
+						.addComponent(buttonNextWord))
+					.addGap(30)
+					.addComponent(labelNumberWordsInDatabase)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(buttonFinishLearning)
+					.addGap(45))
+		);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
@@ -142,71 +207,9 @@ public class LearningView extends JFrame
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(labelTranslatingYourWord))
 		);
-				
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(197)
-							.addComponent(labelYourWordToTranslate))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(123)
-							.addComponent(textFieldWritingWord, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(44)
-							.addComponent(labelCorrectAnswer, GroupLayout.PREFERRED_SIZE, 217, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(85, Short.MAX_VALUE))
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addContainerGap(269, Short.MAX_VALUE)
-					.addComponent(labelYourWordToTranslating)
-					.addGap(240))
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(51)
-							.addComponent(labelYourAnswer, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(61)
-							.addComponent(buttonCheckAnswer)
-							.addGap(18)
-							.addComponent(buttonDisplayingAnswer)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(buttonNextWord)))
-					.addContainerGap(119, Short.MAX_VALUE))
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(200)
-					.addComponent(labelNumberWordsInDatabase)
-					.addContainerGap(355, Short.MAX_VALUE))
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(187)
-					.addComponent(buttonFinishLearning, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(190, Short.MAX_VALUE))
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(31)
-					.addComponent(labelYourWordToTranslate)
-					.addGap(18)
-					.addComponent(labelYourWordToTranslating)
-					.addGap(18)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textFieldWritingWord, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(labelCorrectAnswer))
-					.addGap(18)
-					.addComponent(labelYourAnswer)
-					.addGap(15)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(buttonCheckAnswer)
-						.addComponent(buttonDisplayingAnswer)
-						.addComponent(buttonNextWord))
-					.addGap(30)
-					.addComponent(labelNumberWordsInDatabase)
-					.addGap(30)
-					.addComponent(buttonFinishLearning)
-					.addGap(55))
-		);
 		panel_1.setLayout(gl_panel_1);
+		setResizable(false);
 		setLocationRelativeTo(null);
+		
 	}
 }

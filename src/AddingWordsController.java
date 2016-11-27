@@ -23,6 +23,7 @@ public class AddingWordsController
 		word=word.replace(" ", "");
 		return word;
 	}
+	
 	//listenery dla przyciskow
 	class ButtonAddWordListener implements ActionListener
 	{

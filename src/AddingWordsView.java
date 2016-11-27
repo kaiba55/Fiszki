@@ -10,6 +10,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import javax.swing.SwingConstants;
 
 public class AddingWordsView extends JFrame 
 {
@@ -73,7 +74,7 @@ public class AddingWordsView extends JFrame
 		setVisible(true);
 		setTitle("Dodaj slowko");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 445, 237);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -81,13 +82,15 @@ public class AddingWordsView extends JFrame
 		
 		//inicjalizacja paneli i layouta
 		panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		gl_panel = new GroupLayout(panel);
+		contentPane.add(panel, BorderLayout.WEST);
+		
 		
 		//inicjalizacja labeli
 		labelAddingWord = new JLabel("Dodaj s\u0142\u00F3wko do bazy");
 		labelInPolish = new JLabel("Po polsku:");
+		labelInPolish.setHorizontalAlignment(SwingConstants.CENTER);
 		labelInEnglish = new JLabel("Po angielsku:");
+		labelInEnglish.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		//inicjalizacja textfieldow
 		textFieldInPolish = new JTextField();
@@ -101,53 +104,55 @@ public class AddingWordsView extends JFrame
 		buttonManagementVocabulary = new JButton("Zarz\u0105dzanie has\u0142ami");
 		
 		//dodanie wszystkich elementow do grouplayouta
+		gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(95)
-							.addComponent(labelInPolish)
-							.addGap(100)
-							.addComponent(labelInEnglish))
+							.addGap(164)
+							.addComponent(labelAddingWord))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(44)
+							.addGap(54)
 							.addComponent(buttonAddWord, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
 							.addGap(35)
 							.addComponent(buttonBackToLearning)
 							.addGap(28)
-							.addComponent(buttonManagementVocabulary))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(77)
-							.addComponent(textFieldInPolish, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(67)
-							.addComponent(textFieldInEnglish, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(154)
-							.addComponent(labelAddingWord)))
+							.addComponent(buttonManagementVocabulary)))
 					.addContainerGap(55, Short.MAX_VALUE))
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(98)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(labelInPolish, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+						.addComponent(textFieldInPolish))
+					.addGap(67)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addComponent(labelInEnglish, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+						.addComponent(textFieldInEnglish))
+					.addGap(97))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(21)
 					.addComponent(labelAddingWord)
-					.addGap(30)
-					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(labelInPolish)
-						.addComponent(labelInEnglish))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addComponent(labelInEnglish, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(labelInPolish))
+					.addGap(11)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(textFieldInPolish, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textFieldInEnglish, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(39)
-					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(buttonAddWord)
-						.addComponent(buttonBackToLearning)
-						.addComponent(buttonManagementVocabulary))
-					.addContainerGap(79, Short.MAX_VALUE))
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(buttonAddWord, Alignment.TRAILING)
+						.addComponent(buttonBackToLearning, Alignment.TRAILING)
+						.addComponent(buttonManagementVocabulary, Alignment.TRAILING))
+					.addContainerGap(50, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 }

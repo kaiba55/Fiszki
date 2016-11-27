@@ -38,8 +38,7 @@ public class TheEndView extends JDialog
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		gl_contentPanel = new GroupLayout(contentPanel);
-
+		
 		//inicjalizacja labeli
 		labelUsedAllWords = new JLabel("Wykorzysta\u0142e\u015B wszystkie has\u0142a z bazy.");
 		
@@ -47,19 +46,20 @@ public class TheEndView extends JDialog
 		buttonToMainWindow = new JButton("OK");
 		
 		//umieszczenie elementow w layoucie	
+		gl_contentPanel = new GroupLayout(contentPanel);
 		gl_contentPanel.setHorizontalGroup(
-			gl_contentPanel.createParallelGroup(Alignment.LEADING)
+			gl_contentPanel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPanel.createSequentialGroup()
-					.addGap(109)
+					.addContainerGap(129, Short.MAX_VALUE)
 					.addComponent(labelUsedAllWords)
-					.addContainerGap(128, Short.MAX_VALUE))
+					.addGap(118))
 		);
 		gl_contentPanel.setVerticalGroup(
 			gl_contentPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPanel.createSequentialGroup()
-					.addGap(75)
+				.addGroup(Alignment.TRAILING, gl_contentPanel.createSequentialGroup()
+					.addContainerGap(112, Short.MAX_VALUE)
 					.addComponent(labelUsedAllWords)
-					.addContainerGap(129, Short.MAX_VALUE))
+					.addGap(102))
 		);
 		contentPanel.setLayout(gl_contentPanel);
 		{
@@ -72,6 +72,7 @@ public class TheEndView extends JDialog
 			}
 		}
 		setLocationRelativeTo(null);
+		setResizable(false);
 	}
 
 }

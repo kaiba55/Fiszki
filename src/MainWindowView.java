@@ -71,7 +71,7 @@ public class MainWindowView extends JFrame
 		contentPane.add(panel, BorderLayout.NORTH);
 		panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
-		gl_panel_1 = new GroupLayout(panel_1);
+		
 		
 		//inicjalizacja buttonow
 		buttonLearning = new JButton("Zaczynamy");
@@ -85,24 +85,23 @@ public class MainWindowView extends JFrame
 		
 		//inicjalizacja labeli
 		labelConfigurationOfProgram = new JLabel("Skonfiguruj program");
-		
-		panel.add(labelConfigurationOfProgram);
+		gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(61)
+							.addGap(174)
+							.addComponent(buttonLearning))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(68)
 							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(checkBoxNotRepeating, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 								.addComponent(checkBoxRandomingPolish, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(checkBoxRandomingEnglish, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addComponent(checkBoxRandomingEnglish))
 							.addGap(48)
-							.addComponent(buttonManagementVocabulary))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(165)
-							.addComponent(buttonLearning)))
-					.addContainerGap(65, Short.MAX_VALUE))
+							.addComponent(buttonManagementVocabulary)))
+					.addContainerGap(75, Short.MAX_VALUE))
 		);
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -117,10 +116,12 @@ public class MainWindowView extends JFrame
 					.addComponent(checkBoxNotRepeating)
 					.addGap(41)
 					.addComponent(buttonLearning)
-					.addContainerGap(68, Short.MAX_VALUE))
+					.addContainerGap(74, Short.MAX_VALUE))
 		);
+		panel.add(labelConfigurationOfProgram);
 		panel_1.setLayout(gl_panel_1);
 		setLocationRelativeTo(null);
 		setVisible(true);
+		setResizable(false);
 	}
 }
